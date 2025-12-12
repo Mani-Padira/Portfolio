@@ -1,0 +1,215 @@
+/* ---------------------------
+   Original styles (unchanged)
+   --------------------------- */
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #111;
+}
+
+nav .logo {
+    color: white;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1518770660439-4636190af475')
+        no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+}
+
+.hero-text span {
+    color: #007bff;
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn.small {
+    padding: 7px 15px;
+}
+
+/* About Section */
+.about {
+    padding: 60px 50px;
+    text-align: center;
+}
+
+/* Projects */
+.projects {
+    padding: 60px 50px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Contact */
+.contact {
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: white;
+}
+
+/* ---------------------------
+   Responsive enhancements
+   --------------------------- */
+
+/* Hamburger button (hidden on large screens) */
+.hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    margin-left: 10px;
+    flex-direction: column;
+    gap: 4px;
+}
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+}
+
+/* Mobile nav styles */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+/* Small screens */
+@media (max-width: 800px) {
+
+    nav {
+        padding: 16px 20px;
+    }
+
+    .hero {
+        padding-left: 20px;
+        height: 70vh;
+    }
+
+    nav ul {
+        display: none; /* hide desktop links */
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* when nav is active, show vertical menu */
+    nav.open .nav-links {
+        position: absolute;
+        top: 68px;
+        right: 20px;
+        background: #111;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 12px;
+        gap: 10px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+        z-index: 1000;
+    }
+
+    nav.open .nav-links a {
+        color: white;
+        font-size: 16px;
+    }
+
+    /* make sure hero text scales down on small screens */
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    /* reduce paddings across sections to fit mobile */
+    .about, .projects, .contact {
+        padding: 40px 20px;
+    }
+
+    .project-grid {
+        gap: 14px;
+    }
+
+}
